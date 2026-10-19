@@ -11,23 +11,37 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.MyApplication">
         <activity
+                android:name=".ItemList"
+                android:exported="true"
+                android:label="@string/title_activity_item_list"
+                android:theme="@style/Theme.MyApplication">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name=".ui.theme.Items"
+                android:exported="false"
+                android:label="@string/title_activity_items"
+                android:theme="@style/Theme.MyApplication"/>
+        <activity
                 android:name=".CounterActivity"
                 android:exported="true"
                 android:label="@string/title_activity_counter"
                 android:theme="@style/Theme.MyApplication">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-
         </activity>
-
         <activity
                 android:name=".MainActivity"
                 android:exported="false"
                 android:label="My Application"
-                android:theme="@style/Theme.MyApplication" />
-
+                android:theme="@style/Theme.MyApplication"/>
     </application>
 
 </manifest>

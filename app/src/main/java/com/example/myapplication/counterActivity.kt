@@ -46,7 +46,7 @@ import androidx.compose.ui.draw.clip
 class CounterActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        //enableEdgeToEdge()
         setContent {
             MyApplicationTheme {
                 CounterApp()
@@ -65,7 +65,7 @@ fun CounterApp() {
     ) {
 
         Text(
-            text = "Counter is $counter",
+            text = "Counter:  $counter",
             modifier = Modifier.padding(16.dp),
             color = MaterialTheme.colorScheme.secondary,
             fontSize = 30.sp
@@ -84,7 +84,7 @@ fun CounterApp() {
                 border = BorderStroke(2.dp, Color.White),
 
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = Color(0xFF4CAF50),
+                    containerColor = MaterialTheme.colorScheme.primary,
                     contentColor = Color.White
                 )
             ){
@@ -101,12 +101,16 @@ fun CounterApp() {
             Spacer(Modifier.width(30.dp))
 
             Button(
-                onClick = { counter-- },
+                onClick = {
+                    if(counter>0){
+                        counter--
+                    }
+                },
 
                 border = BorderStroke(2.dp, Color.White),
 
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = Color(0xFF4CAF50),
+                    containerColor =  MaterialTheme.colorScheme.primary,
                     contentColor = Color.White
                 )
             ){
